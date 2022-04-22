@@ -13,7 +13,7 @@ pipeline {
       steps {
         // script
          echo 'Checkout'
-        bash 'mvn clean package'
+        sh 'mvn clean package'
       }
     }
 
