@@ -1,8 +1,7 @@
 pipeline {
-  agent none
+   agent {label 'maven'}
 
   stages {
-    agent {label 'maven'}
     stage('Checkout') {
       steps {
         echo 'Checkout'
