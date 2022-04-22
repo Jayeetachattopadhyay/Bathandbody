@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent { label 'maven'}
 
   stages('CI') {
     stage('Checkout') {
@@ -12,16 +12,8 @@ pipeline {
     stage('Build') {
       steps {
         // script
-         echo 'Checkout'
+         echo 'Build'
         sh 'mvn clean package'
-      }
-    }
-
-    stage('Test') {
-      steps {
-        // script
-         echo 'Test'
-        sh 'mvn test'
       }
     }
   }
