@@ -1,45 +1,24 @@
-//pipeline {
-//   agent {'}
+pipeline {
+	agent any
 
- // stages {
-   // stage('Checkout') {
-     // steps {
-       // echo 'Checkout'
-       // checkout scm
-    //  }
-   // }
+  stages('CI') {
+    stage('Checkout') {
+      steps {
+        echo 'Checkout'
+      }
+    }
+    
+    stage('Build') {
+      steps {
+        echo 'Build'
+      }
+    }
+      
+    stage('Test') {
+      steps {
+        echo 'Test'
+      }
 
-    //stage('Build') {
-     // steps {
-        // script
-        //sh 'mvn clean install'
-     // }
-  //  }
-//  }
-//
-}
-
-Pipeline {
-	Agent any
-
-Stages('CI'){
-	Stage('Checkout') {
-	Steps {
-	  echo 'Checkout'
-	}
-	}
-	
-	Stage('Build') {
-	Steps {
-	  echo 'Build'
-	}
-	}
-		
-	Stage('Test') {
-	Steps {
-     echo 'Test'
-	}
-
-}
-}
+    }
+  }
 }
